@@ -189,6 +189,12 @@ h6 {
   margin: 0 0 2.5rem 0;
 }
 
+.form__row .js-phone {
+  font-variant-numeric: lining-nums;
+  -webkit-font-feature-settings: "lnum";
+          font-feature-settings: "lnum";
+}
+
 .form__button {
   width: 100%;
   font-weight: 700;
