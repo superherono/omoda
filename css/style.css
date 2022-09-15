@@ -16,17 +16,17 @@
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: Raleway;
   font-display: swap;
-  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+  src: url("../fonts/Raleway-Bold.woff2") format("woff2"), url("../fonts/Raleway-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: Raleway;
   font-display: swap;
-  src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+  src: url("../fonts/Raleway-Regular.woff2") format("woff2"), url("../fonts/Raleway-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -53,7 +53,7 @@ body {
 body {
   color: var(--main-color);
   line-height: 1;
-  font-family: "Roboto";
+  font-family: "Raleway";
   font-size: var(--main-offsize);
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -65,7 +65,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Roboto";
+  font-family: "Raleway";
   font-size: inherit;
 }
 
@@ -112,9 +112,6 @@ h6 {
       touch-action: none;
 }
 
-.no-webp .wrapper{
-  background: url("../img/bg.jpg") 0 0/cover no-repeat; }
-
 .wrapper {
   min-height: 100%;
   display: -webkit-box;
@@ -125,6 +122,10 @@ h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
+}
+
+.wrapper--politic {
+  background-color: #222;
 }
 
 .wrapper > main {
@@ -145,7 +146,7 @@ h6 {
 */
 
 [class*=__container] {
-  max-width: 41.25rem;
+  max-width: 42.5rem;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   margin: 0 auto;
@@ -156,31 +157,27 @@ h6 {
   color: var(--white);
   border: 5px solid #00B5FF;
   padding: 5px;
-}
-
-.form__body {
-  -webkit-box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
+  -webkit-box-shadow: 0px 0px 160px #00B5FF;
+          box-shadow: 0px 0px 160px #00B5FF;
 }
 
 .form__title {
   text-align: center;
   letter-spacing: 0.05em;
   line-height: 1.2222222222;
-  font-family: Druk;
 }
 
-@supports (font-size: clamp( 1.375rem , -0.8716216216rem  +  7.5675675676vw , 2.25rem )) {
+@supports (font-size: clamp( 2rem , -0.5675675676rem  +  8.6486486486vw , 3rem )) {
   .form__title {
-    font-size: clamp( 1.375rem , -0.8716216216rem  +  7.5675675676vw , 2.25rem );
+    font-size: clamp( 2rem , -0.5675675676rem  +  8.6486486486vw , 3rem );
   }
 }
 
-@supports not (font-size: clamp( 1.375rem , -0.8716216216rem  +  7.5675675676vw , 2.25rem )) {
+@supports not (font-size: clamp( 2rem , -0.5675675676rem  +  8.6486486486vw , 3rem )) {
   .form__title {
-    font-size: calc(1.375rem + 0.875 * (100vw - 29.6875rem) / 11.5625);
+    font-size: calc(2rem + 1 * (100vw - 29.6875rem) / 11.5625);
   }
 }
 
@@ -300,8 +297,6 @@ textarea.input {
 .checkbox__label::after {
   content: "";
   position: absolute;
-  top: 5px;
-  left: 4px;
   width: 12px;
   height: 9px;
   -webkit-transition: opacity 0.3s ease 0s;
@@ -313,6 +308,10 @@ textarea.input {
 
 .checkbox__text {
   font-size: 1rem;
+}
+
+.checkbox__text a {
+  text-decoration: underline;
 }
 
 .select {
@@ -454,11 +453,93 @@ textarea.input {
   position: relative;
 }
 
+.page__text {
+  color: var(--white);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  line-height: 110%;
+}
+
+.page__text h1 {
+  margin: 0 0 0.625rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 120%;
+}
+
+.page__text h2 {
+  margin: 0 0 1.875rem 0;
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+.page__text h3 {
+  margin: 0 0 0.625rem 0;
+  font-size: 1.125rem;
+}
+
+.page__text p {
+  margin: 0 0 0.9375rem 0;
+}
+
+.page__text b {
+  font-size: 1.0625rem;
+}
+
+.page__text a {
+  color: #00B5FF;
+  text-decoration: underline;
+}
+
+.page--thanks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page__thanks {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  text-align: center;
+  color: var(--white);
+  line-height: 120%;
+}
+
+.page__thanks h1 {
+  margin: 0 0 2.5rem 0;
+}
+
 @media (min-width: 29.99875em) {
   :root {
     --main-offsize: 1.125rem;
     --title-offsize: 2.5rem;
   }
+
+  .no-webp .wrapper:not(.wrapper--politic){
+    background: url("../img/bg-2.jpg") top center/cover no-repeat; }
 
   .form__title {
     margin: 0 0 3.75rem 0;
@@ -471,7 +552,7 @@ textarea.input {
 
   .input {
     padding: 18px 30px;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .checkbox__text br {
@@ -480,31 +561,42 @@ textarea.input {
 
   .select__title {
     padding: 18px 30px;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .select__option {
     padding: 5px 30px;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .page {
     padding-bottom: 55px;
   }
+
+  .page__thanks h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 38.125em) {
+  .checkbox__label::after {
+    top: 5px;
+    left: 4px;
+  }
 }
 
 @media (min-width: 61.99875em) {
   .form__body {
-    padding: 60px 70px;
+    padding: 40px 70px;
   }
 
   .page {
-    padding-top: 135px;
+    padding-top: 35px;
   }
 
   .page__decor {
     position: absolute;
-    top: 103px;
+    top: 40px;
     left: 60px;
     color: var(--white);
     font-weight: 700;
@@ -521,15 +613,15 @@ textarea.input {
             transform: rotate(-180deg);
   }
 
-@supports (font-size: clamp( 2.5rem , 1.2885085575rem  +  1.95599022vw , 3rem )) {
+@supports (font-size: clamp( 2.5rem , 1.5833333333rem  +  1.3333333333vw , 3rem )) {
     .page__decor {
-      font-size: clamp( 2.5rem , 1.2885085575rem  +  1.95599022vw , 3rem );
+      font-size: clamp( 2.5rem , 1.5833333333rem  +  1.3333333333vw , 3rem );
     }
 }
 
-@supports not (font-size: clamp( 2.5rem , 1.2885085575rem  +  1.95599022vw , 3rem )) {
+@supports not (font-size: clamp( 2.5rem , 1.5833333333rem  +  1.3333333333vw , 3rem )) {
     .page__decor {
-      font-size: calc(2.5rem + 0.5 * (100vw - 61.9375rem) / 25.5625);
+      font-size: calc(2.5rem + 0.5 * (100vw - 68.75rem) / 37.5);
     }
 }
 
@@ -548,7 +640,7 @@ textarea.input {
 
 @media (max-width: 61.99875em) {
   .page {
-    padding-top: 50px;
+    padding-top: 20px;
   }
 
   .page__decor {
@@ -557,7 +649,7 @@ textarea.input {
 
   .page__logo {
     max-width: 12.5rem;
-    margin: 0px auto 2.5rem;
+    margin: 0px auto 1.25rem;
   }
 
   .page__logo img {
@@ -568,14 +660,24 @@ textarea.input {
   }
 }
 
+@media (max-width: 38.125em) {
+  .checkbox__label::after {
+    top: 11px;
+    left: 5px;
+  }
+}
+
 @media (max-width: 29.99875em) {
   :root {
     --main-offsize: 1rem;
     --title-offsize: 1.875rem;
   }
 
+  .no-webp .wrapper:not(.wrapper--politic){
+    background: url("../img/bg-2-s.jpg") top center/cover no-repeat; }
+
   .form__body {
-    padding: 40px 20px;
+    padding: 20px;
   }
 
   .form__title {
@@ -605,6 +707,10 @@ textarea.input {
   .page {
     padding-bottom: 40px;
   }
+
+  .page__thanks h1 {
+    font-size: 1.625rem;
+  }
 }
 
 @media (min-width: 29.99875em) and (max-width: 61.99875em) {
@@ -631,6 +737,18 @@ textarea.input {
   .select__option:hover {
     color: #cecece;
   }
+
+  .page__text a:hover {
+    text-decoration: none;
+  }
 }
 
-.webp .wrapper{ background: url(../img/bg.webp) 0 0/cover no-repeat; }
+@media (min-width: 29.99875em){
+
+  .webp .wrapper:not(.wrapper--politic){ background: url(../img/bg-2.webp) top center/cover no-repeat; }
+}
+
+@media (max-width: 29.99875em){
+
+  .webp .wrapper:not(.wrapper--politic){ background: url(../img/bg-2-s.webp) top center/cover no-repeat; }
+}
